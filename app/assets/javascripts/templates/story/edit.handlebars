@@ -1,0 +1,15 @@
+<form {{action 'update' this on="submit"}}>
+  {{input type="hidden" name=authenticity_token value= CSRF_TOKEN}}
+  {{#if isSaving}}
+    <p>Saving story</p>
+  {{/if}}
+  <p>
+    {{input type="text" value=title}}
+  </p>
+
+  <p>
+    {{textarea value=body}}
+  </p>
+  <button>Update</button>
+</form>
+

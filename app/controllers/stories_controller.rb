@@ -1,0 +1,30 @@
+class StoriesController < ApplicationController
+  # skip_before_filter :verify_authenticity_token
+  def index
+    render json: Story.all
+  end
+
+  def show
+    render json: Story.find(params[:id])
+  end
+
+  def create
+    render json: Story.create(story)
+  end
+
+  def update
+    render json: Story.find(params[:id]).tap { |s| s.update_attributes(story) }
+  end
+
+  def destroy
+    Story.find(params[:id]).destroy
+    head 204
+  end
+
+  private
+
+  def story
+    params[:story].permit(:title, :body)
+  end
+
+end

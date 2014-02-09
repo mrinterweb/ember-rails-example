@@ -1,0 +1,14 @@
+<h2>Stories</h2>
+
+<ul>
+  {{#each}}
+    <li>
+      {{#link-to 'story' this}}{{title}}{{/link-to}}
+      <button {{ action 'delete' this }}>X</button>
+    </li>
+  {{/each}}
+</ul>
+
+<p>{{#link-to 'stories.new'}}Create a new Story{{/link-to}}</p>
+
+{{outlet}}
