@@ -5,9 +5,7 @@ YehudaEmberScreencast.Store = DS.Store.extend
   # is built to work nicely with the ActiveModel::Serializers gem.
   adapter: 'active-model'
 
-$(->
-  token = $('meta[name="csrf-token"]').attr('content')
-  $.ajaxPrefilter((options, originalOptions, xhr)->
-    xhr.setRequestHeader('X-CSRF-Token', token)
-  )
+DS.RESTAdapter.reopen(
+  headers: 
+    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
 )
