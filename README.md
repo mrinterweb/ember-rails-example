@@ -1,5 +1,5 @@
 This is some work that was based on:
-![Yehuda Katz presentation: "Off the Menu: Building a Client-Side With Ember and Rails" at Rails Isreal 2014](http://www.youtube.com/watch?v=BpQj9_qEUAc)
+[Yehuda Katz presentation: "Off the Menu: Building a Client-Side With Ember and Rails" at Rails Isreal 2014](http://www.youtube.com/watch?v=BpQj9_qEUAc)
 
 This is an example rails 4 application that uses ember.js.
 
