@@ -1,14 +1,17 @@
-<h2>Stories</h2>
+<div class="pure-u-1-3">
+  <h2>Stories</h2>
+  <ul id="stories-list">
+    {{#each}}
+      <li>
+        {{#link-to 'story' this}}{{title}}{{/link-to}}
+        <button class="pure-button" {{ action 'delete' this }}>X</button>
+      </li>
+    {{/each}}
+  </ul>
+  <p>{{#link-to 'stories.new'}}Create a new Story{{/link-to}}</p>
+</div>
 
-<ul>
-  {{#each}}
-    <li>
-      {{#link-to 'story' this}}{{title}}{{/link-to}}
-      <button {{ action 'delete' this }}>X</button>
-    </li>
-  {{/each}}
-</ul>
+<div class="pure-u-2-3">
+  {{outlet}}
+</div>
 
-<p>{{#link-to 'stories.new'}}Create a new Story{{/link-to}}</p>
-
-{{outlet}}
